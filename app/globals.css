@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  overflow: hidden;
+}
+
+main {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #60a5fa #1e3a8a;
+}
+
+/* Custom scrollbar for webkit browsers */
+main::-webkit-scrollbar {
+  width: 8px;
+}
+
+main::-webkit-scrollbar-track {
+  background: #1e3a8a;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: #60a5fa;
+  border-radius: 20px;
+  border: 2px solid #1e3a8a;
+}
+
+.terminal-border {
+  border: 2px solid #60a5fa;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+  height: calc(100vh - 8rem);
+  overflow-y: auto;
+}
+
+.terminal-border::before {
+  content: '';
+  color: #60a5fa;
+}
+
+@media (max-width: 640px) {
+  .terminal-border {
+    height: calc(100vh - 6rem);
+  }
+}
+
+/* New styles for the command headings */
+h3 {
+  font-weight: bold;
+  color: #60a5fa;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h3::before {
+  content: '$ ';
+  color: #60a5fa;
+}
+
